@@ -1,30 +1,53 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <nav>
+    <ul>
+      <li>home</li>
+      <li>posts</li>
+      <li>notFound</li>
+    </ul>
+    <ul>
+      <RouterLink to="/home">home</RouterLink>
+      <RouterLink to="/posts">posts</RouterLink>
+      <RouterLink to="/notFound">notFound</RouterLink>
+    </ul>
+  </nav>
+  <div id="showcontent">
+    <RouterView/>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+nav {
+  border: 1px solid red;
+  width: 100%;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+ul {
+  display: flex;
+  justify-content:flex-start;
+}
+
+li {
+  list-style: none;
+  display: inline;
+  min-width: 150px;
+}
+li:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+body {
+  border:1px solid red;
+  padding: 0;
 }
 </style>
